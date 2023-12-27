@@ -1,0 +1,18 @@
+log: bochsout.log
+
+memory: guest=24, host=24
+
+# Guest clock speed in terms of emulated instructions per virtual second
+cpu: count=1, ips=50000000, reset_on_triple_fault=0
+
+
+romimage: file="/usr/share/bochs/BIOS-bochs-latest", address=0xfffe0000
+vgaromimage: file="/usr/share/bochs/VGABIOS-lgpl-latest"
+
+display_library: x, options="gui_debug"
+
+ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
+
+# CD-ROM image
+ata0-master:  type=disk, path="hdd.img", status=inserted
+boot: disk
