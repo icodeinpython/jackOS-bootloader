@@ -34,7 +34,7 @@ entry:
 	jmp short start_16
 	nop
 
-OEMIdentifier 		db 'DIKOS0.1'
+OEMIdentifier 		db 'JACKOS  '
 BytesPerSector 		dw 0x200	; 512 bytes per sector
 SectorsPerCluster	db 0x80		;
 ReservedSectors 	dw 0x01		; Reserved sectors before FAT (TODO: is this BOOT?)
@@ -53,7 +53,7 @@ DriveNumber		db 0x80		; 0 for removable, 0x80 for hard-drive
 WinNTBit		db 0x00		; WinNT uses this
 Signature		db 0x29		; DOS 4.0 EBPB signature
 VolumeID		dd 0x0000D105	; Volume ID
-VolumeIDString		db "DIKOS BOOT "; Volume ID
+VolumeIDString		db "JACKOSBOOT "; Volume ID
 SystemIDString		db "FAT16   "   ; File system type, pad with blanks to 8 bytes
 
 

@@ -1,14 +1,3 @@
-; =============================================================================
-; BareMetal -- a 64-bit OS written in Assembly for x86-64 systems
-; Copyright (C) 2008-2010 Return Infinity -- see LICENSE.TXT
-;
-; FAT16 Functions
-; =============================================================================
-
-align 16
-db 'DEBUG: FAT16    '
-align 16
-
 hdd_setup:
 ; Read first sector (MBR) into memory
 	xor rax, rax
