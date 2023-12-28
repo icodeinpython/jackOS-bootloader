@@ -1,7 +1,8 @@
 [BITS 64]
-[ORG 0x90000]
 
-%define VIDEO_RAM 0xB8000
+%define VIDEO_RAM 0xB8000		; Start of 80x25 video memory
+
+section .text
 
 init:
     jmp start
@@ -86,12 +87,12 @@ clear_screen:
 	ret
 
 start:
-    call clear_screen
-	mov rsi, msg_helloWorld
-	call print_string
+    mov rsi, msg_welcome
+    call print_string
 .halt:
-    cli
     hlt
     jmp .halt
 
-msg_helloWorld: db "Hello kernel world!!", 0x00
+
+[section .rodata]
+msg_welcome db "Hello elf world!"
